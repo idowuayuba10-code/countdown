@@ -1,0 +1,167 @@
+:root {
+  --bg1: #fff1f7;
+  --bg2: #e9e4ff;
+  --card: rgba(255, 255, 255, 0.7);
+  --text: #2b1b3d;
+  --muted: #7a6a8c;
+  --a: #ff4f9a;
+  --b: #7a5cff;
+  --c: #ffb703;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg1: #1a1030;
+    --bg2: #2a1450;
+    --card: rgba(255, 255, 255, 0.08);
+    --text: #fff;
+    --muted: #bba9d6;
+  }
+}
+:root[data-theme="dark"] {
+  --bg1: #1a1030;
+  --bg2: #2a1450;
+  --card: rgba(255, 255, 255, 0.08);
+  --text: #fff;
+  --muted: #bba9d6;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+body {
+  font-family: "Poppins", system-ui, sans-serif;
+  color: var(--text);
+  background: linear-gradient(135deg, var(--bg1), var(--bg2));
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow-x: hidden;
+}
+canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+}
+.balloon {
+  position: fixed;
+  bottom: -120px;
+  font-size: 2.4rem;
+  animation: rise linear infinite;
+  opacity: 0.8;
+  z-index: 1;
+}
+@keyframes rise {
+  to {
+    transform: translateY(-120vh) rotate(12deg);
+  }
+}
+main {
+  position: relative;
+  z-index: 2;
+  padding: 24px;
+  width: 100%;
+  max-width: 760px;
+}
+.eyebrow {
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+h1 {
+  font-family: "Pacifico", cursive, serif;
+  font-weight: 400;
+  font-size: clamp(2.4rem, 9vw, 4.5rem);
+  margin: 0.2em 0;
+  background: linear-gradient(90deg, var(--a), var(--b), var(--c));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  line-height: 1.2;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(8px, 2.5vw, 18px);
+  margin: 28px 0;
+}
+.box {
+  background: var(--card);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: clamp(14px, 4vw, 28px) 4px;
+  box-shadow: 0 10px 30px rgba(122, 92, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+.num {
+  font-size: clamp(1.8rem, 8vw, 3.6rem);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  display: block;
+}
+.num.tick {
+  animation: pop 0.35s;
+}
+@keyframes pop {
+  50% {
+    transform: scale(1.15);
+    color: var(--a);
+  }
+}
+.lbl {
+  font-size: clamp(0.6rem, 2.4vw, 0.85rem);
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+.msg {
+  color: var(--muted);
+  font-size: 1.05rem;
+  min-height: 1.6em;
+}
+button {
+  font: inherit;
+  font-weight: 600;
+  border: 0;
+  color: #fff;
+  padding: 12px 26px;
+  border-radius: 999px;
+  cursor: pointer;
+  background: linear-gradient(90deg, var(--a), var(--b));
+  box-shadow: 0 8px 20px rgba(255, 79, 154, 0.35);
+  margin-top: 18px;
+  transition: transform 0.2s;
+}
+button:hover {
+  transform: translateY(-2px) scale(1.04);
+}
+.hide {
+  display: none;
+}
+#party h1 {
+  font-size: clamp(2.6rem, 11vw, 6rem);
+}
+#party .cake {
+  font-size: 5rem;
+  animation: bounce 1s infinite;
+}
+@keyframes bounce {
+  50% {
+    transform: translateY(-14px);
+  }
+}

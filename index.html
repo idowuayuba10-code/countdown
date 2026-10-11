@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Birthday Countdown</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <canvas id="c"></canvas>
+    <main>
+      <section id="count">
+        <div class="eyebrow">Something special is coming</div>
+        <h1 id="title">Birthday Countdown</h1>
+        <div class="grid">
+          <div class="box">
+            <span class="num" id="d">00</span><span class="lbl">Days</span>
+          </div>
+          <div class="box">
+            <span class="num" id="h">00</span><span class="lbl">Hours</span>
+          </div>
+          <div class="box">
+            <span class="num" id="m">00</span><span class="lbl">Minutes</span>
+          </div>
+          <div class="box">
+            <span class="num" id="s">00</span><span class="lbl">Seconds</span>
+          </div>
+        </div>
+        <p class="msg" id="msg"></p>
+      </section>
+      <section id="party" class="hide">
+        <div class="cake">🎂</div>
+        <h1 id="ptitle">Happy Birthday!</h1>
+        <p class="msg" id="pmsg">
+          Wishing you a day full of love, laughter and cake. 🎉
+        </p>
+        <button id="again">More confetti 🎊</button>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
